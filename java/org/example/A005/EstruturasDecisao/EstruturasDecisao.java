@@ -1,4 +1,4 @@
-package org.example.A005.EstruturasDecisão;
+package org.example.A005.EstruturasDecisao;
 
 public class EstruturasDecisao {
 
