@@ -19,7 +19,7 @@ public class Strings {
 
         System.out.println("Seu nome tem " + nome.length() + " letras.");
 
-        //2 — Peça o nome da pessoa e mostre ele todo em MAIÚSCULO e todo em minúsculo.
+        //2 — Peça o nome da pessoa e mostre ele  em MAIÚSCULO e em minúsculo.
 
         System.out.println("Digite o seu nome completo:");
         nome = sc.nextLine();
