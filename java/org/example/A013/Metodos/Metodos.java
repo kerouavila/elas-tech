@@ -1,10 +1,10 @@
-package org.example.A013.Métodos;
+package org.example.A013.Metodos;
 
 import java.util.Scanner;
 
-import static org.example.A013.Métodos.MetodosCadastrados.*;
+import static org.example.A013.Metodos.MetodosCadastrados.*;
 
-public class Métodos {
+public class Metodos {
     static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class Métodos {
         if (idade >= 18) {
             System.out.println("Você é maior de idade");
 
-        } else if (idade <= 17) {
+        } else {
             System.out.println("Você é menor de idade");
         }
 

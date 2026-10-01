@@ -1,6 +1,6 @@
 package org.example.A005.EstruturasDecisão;
 
-public class EstruturasDecisão {
+public class EstruturasDecisao {
 
     void main() {
 

@@ -1,6 +1,6 @@
 package org.example.A003.OperadoresAritmeticos;
 
-public class OperadoresAritméticos {
+public class OperadoresAritmeticos {
     static void main() {
         // Exercício 1:
         // Rode o código:

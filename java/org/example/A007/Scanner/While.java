@@ -1,11 +1,9 @@
 package org.example.A007.Scanner;
 
-import org.example.A013.Métodos.Métodos;
-
 import java.util.Scanner;
 
 public class While {
-    static void main(String[] args) {
+    static void main() {
 
         Scanner sc = new Scanner(System.in);
 

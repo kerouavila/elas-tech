@@ -1,6 +1,6 @@
 package org.example.A007.Scanner;
 
-public class EstruturasRepetição {
+public class EstruturasRepeticao {
     static void main() {
 
         for (int i = 0; i <=15; i++){
