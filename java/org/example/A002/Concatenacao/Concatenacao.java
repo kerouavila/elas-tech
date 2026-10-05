@@ -1,4 +1,4 @@
-package org.example.A002.Concatenação;
+package org.example.A002.Concatenacao;
 
 public class Concatenacao {
 
