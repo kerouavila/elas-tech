@@ -30,7 +30,7 @@ public class Metodos {
 
         System.out.printf("A média das notas é: %.1f%n", media);
 
-        //5 — Crie um metodo ehMaiorDeIdade(int idade) que devolve true ou false. No main, peça a idade e use o retorno do método dentro de um if para imprimir se a pessoa é maior ou menor de idade.
+        //5 — Crie um metodo ehMaiorDeIdade(int idade) que devolve true ou false. No main, peça a idade e use o retorno do metodo dentro de um if para imprimir se a pessoa é maior ou menor de idade.
 
     }
 

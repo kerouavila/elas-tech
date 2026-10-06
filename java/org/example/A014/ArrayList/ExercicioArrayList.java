@@ -40,7 +40,7 @@ public class ExercicioArrayList {
         System.out.println("Eram quatro cidades. Removendo a primeira, sobram: " + listaCidades.size());
 
 
-        //- Crie uma lista com seis nomes e imprima todos usando um laço, no formato `"0: Ana"`. (Dica: i + ": " + comando para pegar posição da lista)
+        //- Crie uma lista com seis nomes e imprima usando um laço, no formato `"0: Ana"`. (Dica: i + ": " + comando para pegar posição da lista)
 
         ArrayList<String> listaNomes3 = new ArrayList<>();
         listaNomes3.addAll(List.of("Érica", "Eric", "Clapton", "Rachel", "Ellen", "Lupton"));
