@@ -1,4 +1,4 @@
-package org.example.A001.Variáveis;
+package org.example.A001.Variaveis;
 
 public class Variaveis {
 
