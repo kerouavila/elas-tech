@@ -45,7 +45,7 @@ public class ExercicioArrayList {
         ArrayList<String> listaNomes3 = new ArrayList<>();
         listaNomes3.addAll(List.of("Érica", "Eric", "Clapton", "Rachel", "Ellen", "Lupton"));
 
-        for (int i = 0; i < listaNomes3.size(); i++){
+        for (int i = 0; i <= 5; i++){
             System.out.println(i + ": " + listaNomes3.get(i));
         }
 
