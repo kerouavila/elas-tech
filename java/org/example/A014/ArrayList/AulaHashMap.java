@@ -23,7 +23,5 @@ public class AulaHashMap {
         emails.put("Rachel", "rachel.green@gmail.com");
         System.out.println(emails.get("Rachel"));
         System.out.println(emails.getOrDefault("rachel.green@gmail.com", "Posição inválida"));
-
-
     }
 }

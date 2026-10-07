@@ -32,7 +32,6 @@ public class FilaQueue {
         if (fila.isEmpty() != true){
             System.out.println("Adicione valores na fila");
         } else {
-
         }
     }
 }
