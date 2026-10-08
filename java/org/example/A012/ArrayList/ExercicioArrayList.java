@@ -1,4 +1,4 @@
-package org.example.A014.ArrayList;
+package org.example.A012.ArrayList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,16 @@ import java.util.Scanner;
 
 public class ExercicioArrayList {
     static void main() {
+
+        /*.add(); - adiciona um elemento na lista, informando a posição onde o elemento vai ser inserido. Se nao informar a posição, ele joga pro fim da lista
+        .get(); - acessa a lista e informa a posição em que está a informação
+        .size(); - informa o tamanho da lista, a quantidade de elementos
+        .contains(); - informa se o valor informado tem na lista, true or false
+        .indexOf(); - fala a posição na lista do item informado
+        .remove(); - retira um item da lista
+        .set(); -
+        System.out.println(lista.isEmpty()); fala se a lista esta vazia ou nao
+        .addAll(List.of()); cita o conteudo integral de dentro da lista */
 
         //- Crie uma lista vazia de nomes. Adicione três nomes e imprima a lista inteira.
 

@@ -1,4 +1,4 @@
-package org.example.A013.Metodos;
+package org.example.A010.Metodos;
 
 import java.util.Scanner;
 

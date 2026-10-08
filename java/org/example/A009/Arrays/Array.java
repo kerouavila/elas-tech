@@ -1,4 +1,4 @@
-package org.example.A012.Strings;
+package org.example.A009.Arrays;
 
 import java.util.Scanner;
 

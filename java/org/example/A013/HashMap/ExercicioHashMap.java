@@ -1,10 +1,22 @@
-package org.example.A014.ArrayList;
+package org.example.A013.HashMap;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class ExercicioHashMap {
     static void main() {
+
+        /*..put("Ana", 28);
+        .get("Ana"); - retonar a informação que foi identificada na lista
+        .getOrDefault("Zoe", 0); - retorna uma mensagem de erro para caso o usuario procure algo que nao existe
+        .containsKey("Ana");
+        .containsValue(28);
+        .remove("Ana");
+        .size();
+        .isEmpty();
+        .keySet();
+        .values();
+        putAll(Map.of())
+        */
 
         //1. Crie um HashMap de nomes e idades com três pessoas. Imprima o mapa
         //   inteiro e depois use get para mostrar a idade de uma delas.
