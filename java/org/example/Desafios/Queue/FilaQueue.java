@@ -1,6 +1,4 @@
-package org.example.A015.Queue;
-
-import org.example.A012.Strings.Array;
+package org.example.Desafios.Queue;
 
 import java.util.ArrayDeque;
 import java.util.List;

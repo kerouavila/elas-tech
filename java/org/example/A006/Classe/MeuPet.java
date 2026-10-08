@@ -1,4 +1,4 @@
-package org.example.A008.Pet;
+package org.example.A006.Classe;
 
 public class MeuPet {
     static void main(String[] args) {

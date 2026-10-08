@@ -1,4 +1,4 @@
-package org.example.A009.Produto;
+package org.example.A006.Classe;
 
 public class Produto {
 
