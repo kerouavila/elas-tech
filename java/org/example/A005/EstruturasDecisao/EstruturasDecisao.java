@@ -1,8 +1,11 @@
 package org.example.A005.EstruturasDecisao;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class EstruturasDecisao {
 
-    void main() {
+    public static void main(String[] args) {
 
         // Crie uma variável idade e mostre a categoria de uma pessoa:
         // menos de 13 anos é "Criança";
@@ -119,7 +122,5 @@ public class EstruturasDecisao {
         else {
             System.out.println("Reprovado");
         }
-
     }
-
 }

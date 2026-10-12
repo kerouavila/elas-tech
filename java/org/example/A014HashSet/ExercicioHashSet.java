@@ -1,4 +1,4 @@
-package org.example.A014.HashSet;
+package org.example.A014HashSet;
 
 import java.util.ArrayList;
 import java.util.HashSet;
