@@ -3,7 +3,7 @@ package org.example.A013.HashMap;
 import java.util.HashMap;
 
 public class ExercicioHashMap {
-    static void main() {
+    public static void main() {
 
         /*..put("Ana", 28);
         .get("Ana"); - retonar a informação que foi identificada na lista

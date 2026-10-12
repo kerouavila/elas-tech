@@ -1,4 +1,4 @@
-package org.example.A001.Variaveis;
+package org.example.a001_variaveis;
 
 public class Variaveis {
 
@@ -57,8 +57,6 @@ public class Variaveis {
         System.out.println(centímetros);
         System.out.println(pixels);
         System.out.println(gatos);
-
-
     }
 
 }
