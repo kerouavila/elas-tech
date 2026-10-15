@@ -5,7 +5,7 @@ public class Pet {
     String nome;
     String especie;
     String cor;
-    String porte;
+    public String porte;
     double peso;
 
     public Pet(String nomeDigitado, String especieDigitado, String corDigitado, double pesoDigitado) {
