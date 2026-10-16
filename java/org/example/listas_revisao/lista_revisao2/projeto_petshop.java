@@ -1,4 +1,4 @@
-package org.example.desafios.d002_lista_revisao;
+package org.example.listas_revisao.lista_revisao2;
 
 import java.util.InputMismatchException;
 import java.util.HashSet;
