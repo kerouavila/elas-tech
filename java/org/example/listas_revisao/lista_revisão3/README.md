@@ -44,15 +44,12 @@ Está violando o princípio de aberto/fechado, utilizando uma classe para inseri
 
 ### c)
 ```java
-class EnviadorEmail {
-    void enviar(String tipo) {
-        if (tipo.equals("aniversario")) {
-            System.out.println("Feliz aniversário!");
-        } else if (tipo.equals("seguranca")) {
-            System.out.println("Alerta de segurança!");
-        } else if (tipo.equals("promocao")) {
-            System.out.println("Promoção imperdível!");
-        }
+java
+class PedidoService {
+    private MySQLRepositorio repo = new MySQLRepositorio();
+
+    void finalizar() {
+        repo.salvar();
     }
 }
 ```
