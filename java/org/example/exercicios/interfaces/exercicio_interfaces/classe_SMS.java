@@ -1,4 +1,4 @@
-package org.example.exercicios.interfaces;
+package org.example.exercicios.interfaces.exercicio_interfaces;
 
 public class classe_SMS implements Notificacao{
     @Override

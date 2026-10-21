@@ -1,4 +1,4 @@
-package org.example.exercicios.construtor;
+package org.example.exercicios.construtor.exercicio_construtor1;
 
 import org.example.exercicios.singleton.testeSingleton;
 
