@@ -1,27 +1,44 @@
 package org.example.listas_revisao.lista_revisao2;
 
-import java.util.InputMismatchException;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class projeto_petshop {
-    static void main() {
 
+    static void exibirFichaPet(Pet p) {
+        System.out.println("Nome: " + p.nome);
+    }
+
+    static void exibirFichaPet(Pet p, String titulo) {
+        System.out.println(titulo);
+        System.out.println("Nome: " + p.nome);
+        System.out.println("Espécie: " + p.especie);
+        System.out.printf("Peso: %.1f kg\n", p.peso);
+        System.out.println("Porte: " + p.porte);
+    }
+
+    public static void main() {
         Scanner sc = new Scanner(System.in);
 
-        Pet[] listaPets = new Pet[5];
+        ArrayList<Pet> listaPets = new ArrayList<>();
+        ArrayDeque<String> filaBanho = new ArrayDeque<>();
+
         int opcao = -1;
-        int total = 0;
 
         while (opcao != 0) {
-            System.out.println("◃*───────────*▹ Bem-vindo ao petshop da Kerou! ◃*───────────*▹");
-            System.out.println("Digite 1 para cadastrar um pet");
-            System.out.println("Digite 2 para ver todos os pets cadastrados");
-            System.out.println("Digite 3 para buscar um pet cadastrado");
-            System.out.println("Digite 4 para ver quais espécies estão cadastradas");
-            System.out.println("Digite 0 para sair");
-            opcao = sc.nextInt();
-            sc.nextLine();
+            System.out.println("\n◃*───────────*▹ Bem-vindo ao petshop da Kerou! ◃*───────────*▹");
+            System.out.println("1 - Cadastrar pet");
+            System.out.println("2 - Listar pets");
+            System.out.println("3 - Buscar pet cadastrado");
+            System.out.println("4 - Ver espécies cadastradas");
+            System.out.println("5 - Entrar na fila de banho");
+            System.out.println("6 - Atender próximo da fila");
+            System.out.println("7 - Executar serviços (Banho, Tosa, Consulta)");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha: ");
 
             try {
                 opcao = sc.nextInt();
@@ -29,12 +46,7 @@ public class projeto_petshop {
 
                 switch (opcao) {
                     case 1:
-                        if (total >= listaPets.length) {
-                            System.out.println("A lista de pets atingiu o limite. Para cadastrar mais pets, aumente o limite ou exclua um pet já cadastrado.");
-                            break;
-                        }
-
-                        System.out.println("Vamoos continuar com o cadastro do pet. Por favor, digite o nome do seu pet:");
+                        System.out.println("Por favor, digite o nome do seu pet:");
                         String nome = sc.nextLine();
 
                         System.out.println("Digite a espécie do " + nome + ":");
@@ -47,61 +59,101 @@ public class projeto_petshop {
                         double peso = sc.nextDouble();
                         sc.nextLine();
 
-                        Pet novoPet = new Pet(nome, especie, cor, peso);
-                        novoPet.porte = novoPet.definirPorte();
+                        Pet novoPet;
+                        if (especie.equalsIgnoreCase("cachorro")) {
+                            novoPet = new Cachorro(nome, especie, cor, peso);
+                        } else if (especie.equalsIgnoreCase("gato")) {
+                            novoPet = new Gato(nome, especie, cor, peso);
+                        } else {
+                            novoPet = new Pet(nome, especie, cor, peso);
+                        }
 
-                        listaPets[total] = novoPet;
-                        total++;
-
-                        System.out.println("O novo pet " + nome + " foi cadastrado <3 Agora, temos " + total + " pet(s) no sistema.");
+                        listaPets.add(novoPet);
+                        System.out.println("O novo pet " + nome + " foi cadastrado <3 Agora, temos " + listaPets.size() + " pet(s) no sistema.");
                         break;
 
                     case 2:
-                        if (total == 0) {
+                        if (listaPets.isEmpty()) {
                             System.out.println("Nenhum pet cadastrado.");
-
                         } else {
-                            System.out.println("Pets cadastrados:");
-                            for (int i = 0; i < total; i++) {
-                                System.out.println(listaPets[i].nome + ": " + listaPets[i].especie + ", " + listaPets[i].cor + ", " + listaPets[i].peso + "kg, " + listaPets[i].porte);
+                            System.out.println("\n--- PETS CADASTRADOS ---");
+                            for (Pet p : listaPets) {
+                                System.out.println(p.nome + " (" + p.especie + ") - " + p.peso + " kg - Porte " + p.porte);
+                                p.emitirSom();
                             }
                         }
                         break;
 
                     case 3:
-                        System.out.println("Digite o nome do pet. Vamos buscar no sistema.");
+                        System.out.println("Qual pet você procura?");
                         String busca = sc.nextLine();
-
                         boolean achou = false;
 
-                        for (int i = 0; i < total; i++) {
-                            if (listaPets[i].nome.equalsIgnoreCase(busca)) {
-                                System.out.println("Encontrado: " + listaPets[i].nome + ": " + listaPets[i].especie + ", " + listaPets[i].cor + ", " + listaPets[i].peso + "kg, " + listaPets[i].porte);
+                        for (Pet p : listaPets) {
+                            if (p.nome.equalsIgnoreCase(busca)) {
+                                System.out.println("Encontrado: " + p.nome + " (" + p.especie + ") - " + p.peso + " kg - Porte " + p.porte);
                                 achou = true;
                             }
-
-                            if (!achou) {
-                                System.out.println("Não encontrei um pet com este nome.");
-                            }
-                            break;
                         }
 
+                        if (!achou) {
+                            System.out.println("Pet não encontrado.");
+                        }
+                        break;
+
                     case 4:
-                        if (total == 0) {
-                            System.out.println("Nenhum pet cadastradoop.");
+                        if (listaPets.isEmpty()) {
+                            System.out.println("Nenhum pet cadastrado.");
                         } else {
                             HashSet<String> especiesUnicas = new HashSet<>();
+                            for (Pet p : listaPets) {
+                                especiesUnicas.add(p.especie);
+                            }
 
+                            System.out.println("\n--- ESPÉCIES CADASTRADAS ---");
                             for (String especieUnica : especiesUnicas) {
                                 System.out.println("- " + especieUnica);
                             }
+                            System.out.println("Total de espécies diferentes: " + especiesUnicas.size());
+                        }
+                        break;
 
-                            System.out.println("Total de especies cadastradas no sistema: " + especiesUnicas.size());
+                    case 5:
+                        System.out.print("Nome do pet pra entrar na fila: ");
+                        String nomeFila = sc.nextLine();
+                        filaBanho.add(nomeFila);
+                        System.out.println(nomeFila + " entrou na fila.");
+                        System.out.println("Fila agora: " + filaBanho);
+                        break;
+
+                    case 6:
+                        if (filaBanho.isEmpty()) {
+                            System.out.println("A fila está vazia.");
+                        } else {
+                            String proximo = filaBanho.peek();
+                            System.out.println("Próximo da fila: " + proximo);
+                            System.out.println("Atendendo " + proximo + "...");
+                            filaBanho.poll();
+                            System.out.println("Fila agora: " + filaBanho);
+                        }
+                        break;
+
+                    case 7:
+                        System.out.print("Nome do pet para os serviços: ");
+                        String nomeServico = sc.nextLine();
+
+                        ArrayList<Servico> servicos = new ArrayList<>();
+                        servicos.add(new Banho());
+                        servicos.add(new Tosa());
+                        servicos.add(new Consulta());
+
+                        for (Servico s : servicos) {
+                            s.executar(nomeServico);
                         }
                         break;
 
                     case 0:
-                        System.out.println("Tudo bem. Volte sempre!");
+                        System.out.println("Até logo!");
                         break;
 
                     default:
@@ -109,9 +161,11 @@ public class projeto_petshop {
                 }
 
             } catch (InputMismatchException e) {
-                System.out.println("Por favor, digite apenas números.");
+                System.out.println("Digite apenas números!");
                 sc.nextLine();
             }
         }
+
+        sc.close();
     }
 }

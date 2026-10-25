@@ -1,39 +1,32 @@
 package org.example.listas_revisao.lista_revisao2;
 
 public class Pet {
-
     String nome;
     String especie;
     String cor;
-    public String porte;
     double peso;
+    String porte;
 
-    public Pet(String nomeDigitado, String especieDigitado, String corDigitado, double pesoDigitado) {
-
-        nome = nomeDigitado;
-        especie = especieDigitado;
-        cor = corDigitado;
-        peso = pesoDigitado;
-
+    public Pet(String nome, String especie, String cor, double peso) {
+        this.nome = nome;
+        this.especie = especie;
+        this.cor = cor;
+        this.peso = peso;
+        this.porte = definirPorte();
     }
 
-    public String definirPorte() {
-
-        if (peso < 3.5) {
+    String definirPorte() {
+        if (peso < 10) {
             return "Pequeno";
-        } else if (peso < 5) {
+        } else if (peso < 25) {
             return "Médio";
         } else {
             return "Grande";
         }
     }
 
-    public void exibirFicha(){
-        System.out.println("◃*───────────*▹ Ficha do Pet ◃*───────────*▹");
-        System.out.println("Nome do pet: " + nome);
-        System.out.println("Espécie: " + especie);
-        System.out.println("Cor: " + cor);
-        System.out.println("Peso: " + peso + "kg.");
-        System.out.println("Porte: " + porte);
+    void emitirSom() {
+        System.out.println(nome + " faz: som genérico");
     }
 }
+
