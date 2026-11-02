@@ -50,7 +50,31 @@ Ao longo da construção, testei a lógica dos menus e tentei identificar cenár
 - O usuário escolher opções inexistentes;
 - O usuário tentar criar pedidos de lanche com valores zerados.
 
-Tratei cada cenário com Try Catch. Veja todos eles em:
+Tratei cada cenário com Try Catch. Veja todos eles em: https://excalidraw.com/#room=425050e799517c88da44,Kklf89_aJaC1hrCy629EOg
+
+## Testes com o JUnit:
+Também fiz testes utilizando o JUinit na pasta test do projeto:
+
+
+    public class CardapioTest {
+    @Test
+    void precoNegativoDeveLancarExcecao() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Lanche("Lanche Inválido", -10.0);
+        });
+    }
+
+    @Test
+    void lancheComAdicionalCustaPrecoEsperado() {
+
+        ItemCardapio lanche = LancheFactory.bauruPileque();
+        lanche = new ComCheddar(lanche);
+
+        assertEquals(35.90, lanche.getPreco(), 0.001);
+    }
+
+Ambos foram bem sucedidos e não apresentaram erros, validando os lanches com adicionais ou conferindo se os preços negativos foram recusados.
 
 ## Conclusão
 De modo geral, este projeto me instruiu a programar um sistema orientado a objetos, utilizando classes, encapsulamento e interfaces para modelar o código e garantir a separação de responsabilidades.
