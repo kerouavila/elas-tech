@@ -2,6 +2,8 @@
 
 Sistema desenvolvido em Java para o gerenciamento de pedidos de uma lanchonete, aplicando conceitos sólidos de Orientação a Objetos, padrões de projeto e boas práticas de arquitetura de software.
 
+📽️Vídeo de apresentação: https://drive.google.com/file/d/1usYzwonZY4z7c8Cx1PZbO25Sbi9l_Kcl/view?usp=sharing
+
 ## O que o sistema deve fazer:
 ### 1. Permitir que o usuário:
 - Crie novos pedidos de lanches;
